@@ -8,7 +8,6 @@ public class Tile extends StackPane {
 
     private int x, y;
     private Rectangle border;
-    private boolean selected = false;
 
     public Tile(int x, int y) {
         this.x = x;
@@ -23,18 +22,6 @@ public class Tile extends StackPane {
         }
 
         getChildren().add(border);
-
-        setOnMouseClicked(e -> handleClick());
-    }
-
-    private void handleClick() {
-        selected = !selected;
-
-        if (selected) {
-            border.setFill(Color.YELLOW);
-        } else {
-            resetColor();
-        }
     }
 
     public void highlight() {
