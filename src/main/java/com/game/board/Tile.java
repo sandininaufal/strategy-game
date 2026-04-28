@@ -8,6 +8,7 @@ public class Tile extends StackPane {
 
     private int x, y;
     private Rectangle border;
+    private Color originalColor;
 
     public Tile(int x, int y) {
         this.x = x;
@@ -16,10 +17,12 @@ public class Tile extends StackPane {
         border = new Rectangle(80, 80);
 
         if ((x + y) % 2 == 0) {
-            border.setFill(Color.BEIGE);
+            originalColor = Color.web("#EEEED2");
         } else {
-            border.setFill(Color.BROWN);
+            originalColor = Color.web("#769656");
         }
+
+        border.setFill(originalColor);
 
         getChildren().add(border);
     }
@@ -29,10 +32,6 @@ public class Tile extends StackPane {
     }
 
     public void resetColor() {
-        if ((x + y) % 2 == 0) {
-            border.setFill(Color.BEIGE);
-        } else {
-            border.setFill(Color.BROWN);
-        }
+        border.setFill(originalColor);
     }
 }

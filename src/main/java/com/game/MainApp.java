@@ -19,7 +19,7 @@ public class MainApp extends Application {
         MainMenu menu = new MainMenu();
         Scene scene = new Scene(menu, 640, 640);
 
-        primaryStage.setTitle("Strategy Game");
+        primaryStage.setTitle("Chess Magic War");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -32,11 +32,13 @@ public class MainApp extends Application {
     }
 
     public static void startGameWithSetup(
-            com.game.entity.ElementType p1,
-            com.game.entity.ElementType p2
+            com.game.entity.ElementType p1a,
+            com.game.entity.ElementType p1b,
+            com.game.entity.ElementType p2a,
+            com.game.entity.ElementType p2b
     ) {
         com.game.board.GameBoard board =
-                new com.game.board.GameBoard(p1, p2);
+                new com.game.board.GameBoard(p1a, p1b, p2a, p2b);
 
         Scene scene = new Scene(board, 640, 640);
         primaryStage.setScene(scene);
